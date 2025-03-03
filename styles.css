@@ -11,55 +11,36 @@ body {
 /* Navbar */
 nav {
     background-color: #1e1e1e;
-    padding: 10px;
+    padding: 15px 0;
     border-bottom: 2px solid #00ffcc;
 }
 
 nav a {
     color: #00ffcc;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 20px;
+    font-size: 1.2em;
     font-weight: bold;
+    display: inline-block;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* Blog Title */
-h1 {
-    font-size: 2em;
-    margin-top: 20px;
+/* Centered Navigation */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* Explore Blog Button */
-.explore-btn {
-    display: inline-block;
-    background-color: #00ffcc;
-    color: #121212;
-    padding: 10px 20px;
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+/* Main Sections */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
 }
 
-.explore-btn:hover {
-    background-color: #00cc99;
-    transform: scale(1.05);
-}
-
-/* What to Expect Section */
-.what-to-expect {
-    margin-top: 30px;
-    font-size: 1.2em;
-}
-
-/* Footer */
-footer {
-    margin-top: 30px;
-    font-size: 0.9em;
-    opacity: 0.7;
-}
+.section {
+    backgroun
