@@ -1,3 +1,98 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+nav {
+    background-color: #1e1e1e;
+    padding: 15px 0;
+    border-bottom: 2px solid #00ffcc;
+}
+
+nav a {
+    color: #00ffcc;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Centered Navigation */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Main Sections */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    background: #1e1e1e;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.2);
+}
+
+/* Explore Blog Button */
+.explore-btn {
+    display: inline-block;
+    background-color: #00ffcc;
+    color: #121212;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-btn:hover {
+    background-color: #00cc99;
+    transform: scale(1.05);
+}
+
+/* Bullet Points */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+}
+
+ul li::before {
+    content: "🔹";
+    color: #00ffcc;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
 .explore-blog {
     color: #00ffcc; /* Neon green */
     font-weight: bold;
