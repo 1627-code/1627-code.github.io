@@ -1,6 +1,5 @@
-/* Fix "Explore Blog" link */
 .explore-blog {
-    color: #00ffcc;
+    color: #00ffcc; /* Neon green */
     font-weight: bold;
     text-decoration: none;
 }
@@ -10,37 +9,6 @@
     color: #00cc99;
 }
 
-/* Improve bullet point spacing */
-ul {
-    list-style: none;
-    padding: 10px 0;
-}
-
-ul li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1.1em;
-    margin: 5px 0;
-}
-
-/* Add hover effect to navigation links */
-.nav-links a:hover {
-    color: #00cc99;
-    transform: scale(1.1);
-    transition: all 0.2s ease-in-out;
-}
-/* Fix "Explore Blog" link */
-.explore-blog {
-    color: #00ffcc;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.explore-blog:hover {
-    text-decoration: underline;
-    color: #00cc99;
-}
 
 /* Improve bullet point spacing */
 ul {
