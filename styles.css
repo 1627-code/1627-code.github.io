@@ -139,13 +139,16 @@ ul li::before {
 }
 
 /* Blog Post Styles */
+/* Blog Post Grid */
 .blog-posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 40px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
+
 
 .blog-card {
     width: 300px; /* Adjust size */
