@@ -15,7 +15,7 @@ body {
 .hero {
     background: url('https://raw.githubusercontent.com/1627-code/1627-code.github.io/main/IMG_20241216_072142_437.jpg') center/contain no-repeat;
  /* Replace with your image */
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,8 +34,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.5); /* Darkens the image */
     z-index: 1;
+}
+
+.hero * {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1,
