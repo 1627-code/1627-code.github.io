@@ -1,5 +1,4 @@
 /* General Styles */
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
@@ -11,11 +10,9 @@ body {
 }
 
 /* Hero Section */
-/* Hero Section */
 .hero {
     background: url('https://raw.githubusercontent.com/1627-code/1627-code.github.io/main/IMG_20241216_072142_437.jpg') center/cover no-repeat;
- /* Replace with your image */
-     height: 80vh; /* Adjust height if needed */
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +23,7 @@ body {
     position: relative;
 }
 
-/* Adding an overlay effect for better readability */
+/* Overlay Effect */
 .hero::before {
     content: "";
     position: absolute;
@@ -41,13 +38,6 @@ body {
 .hero * {
     position: relative;
     z-index: 2;
-}
-
-.hero h1,
-.hero p,
-.hero .cta-btn {
-    position: relative;
-    z-index: 2; /* Keep text above overlay */
 }
 
 /* Call-to-Action Button */
@@ -148,8 +138,6 @@ ul li::before {
     color: #00ffcc;
 }
 
-
-/* Blog Post Styles */
 /* Blog Post Styles */
 .blog-container {
     display: grid;
@@ -158,36 +146,38 @@ ul li::before {
     padding: 40px;
 }
 
+/* Ensure cards are responsive */
 .blog-posts {
-    display: flex; /* Change from grid to flex for debugging */
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
 }
 
+/* Blog Card Styling */
 .blog-card {
-    width: 30%; /* Adjust size */
+    width: 30%;
     background: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Ensures transform works properly */
 }
 
 .blog-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
     background-color: #292929;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 15px rgba(0, 255, 204, 0.3);
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .blog-card {
-        width: 90%; /* Adjust for smaller screens */
+        width: 90%;
     }
 }
-
-
 
 .blog-card h3 {
     color: #fff;
@@ -223,8 +213,9 @@ footer {
     font-size: 0.9em;
     opacity: 0.7;
 }
+
 .explore-blog {
-    color: #00ffcc; /* Neon green */
+    color: #00ffcc;
     font-weight: bold;
     text-decoration: none;
 }
@@ -233,7 +224,6 @@ footer {
     text-decoration: underline;
     color: #00cc99;
 }
-
 
 /* Improve bullet point spacing */
 ul {
