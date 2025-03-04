@@ -150,6 +150,7 @@ ul li::before {
 
 
 /* Blog Post Styles */
+/* Blog Post Styles */
 .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -158,15 +159,15 @@ ul li::before {
 }
 
 .blog-card {
-    background: #1e1e1e;
-    padding: 20px;
+    background: #1a1a1a;
     border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-card:hover {
-    transform: scale(1.05);
-    background-color: #292929;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
 }
 
 .blog-card h3 {
@@ -196,8 +197,6 @@ ul li::before {
 .read-more:hover {
     background: #00cccc;
 }
-
-
 
 /* Footer */
 footer {
