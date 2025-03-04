@@ -147,6 +147,29 @@ ul li::before {
     content: "🔹";
     color: #00ffcc;
 }
+/*blog-post grid*/
+.grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .blog-card {
+            background: #222;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: scale(1.05);
+        }
+        .blog-card a {
+            color: cyan;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
 /* Footer */
 footer {
