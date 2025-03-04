@@ -148,6 +148,11 @@ ul li::before {
 }
 .blog-posts {
     display: grid;
+display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adds space between blog posts */
+    padding: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-items: center;
