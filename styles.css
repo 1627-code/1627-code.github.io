@@ -143,7 +143,7 @@ ul li::before {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Adds space between blog posts */
+    gap: 20px; /* Adds space between blog posts */
     padding: 20px;
 }
 
