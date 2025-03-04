@@ -139,11 +139,18 @@ ul li::before {
 }
 
 /* Blog Post Styles */
-/* Blog Post Grid */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adds space between blog posts */
+    padding: 20px;
+}
+
 .blog-posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
+    gap: 20px;
     justify-items: center;
     max-width: 1000px;
     margin: 0 auto;
