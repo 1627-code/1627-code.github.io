@@ -15,7 +15,7 @@ body {
 .hero {
     background: url('https://raw.githubusercontent.com/1627-code/1627-code.github.io/main/IMG_20241216_072142_437.jpg') center/cover no-repeat;
  /* Replace with your image */
-    height: 80vh;
+     height: 80vh; /* Adjust height if needed */
     display: flex;
     flex-direction: column;
     justify-content: center;
