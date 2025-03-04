@@ -139,14 +139,15 @@ ul li::before {
 }
 
 /* Blog Post Styles */
+.blog-container {
+    display: block;
+}
 
 .blog-posts {
     display: grid;
-
-    gap: 20px; /* Adds space between blog posts */
+    gap: 50px; /* Adds space between blog posts */
     padding: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  
     justify-items: center;
     max-width: 1000px;
     margin: 0 auto;
