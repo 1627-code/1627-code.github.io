@@ -43,6 +43,29 @@
     <footer>
         <p>© 2025 CyberSec Blog | Built with passion</p>
     </footer>
+
+ <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("posts.json")
+                .then(response => response.json())
+                .then(posts => {
+                    const blogGrid = document.getElementById("blog-grid");
+                    posts.forEach(post => {
+                        const postElement = document.createElement("div");
+                        postElement.classList.add("blog-card");
+                        postElement.innerHTML = `
+                            <h3>${post.title}</h3>
+                            <p>${post.summary}</p>
+                            <small>${post.date}</small>
+                            <a href="${post.link}" target="_blank">Read More</a>
+                        `;
+                        blogGrid.appendChild(postElement);
+                    });
+                })
+                .catch(error => console.error("Error fetching blog posts:", error));
+        });
+    </script>
+
 </body>
 </html>
 
