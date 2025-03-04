@@ -41,7 +41,7 @@ body {
 }
 
 /* Call-to-Action Button */
-.cta-btn {
+.ca-btn {
     background-color: #00ffcc;
     color: #121212;
     padding: 12px 24px;
@@ -54,7 +54,7 @@ body {
     margin-top: 15px;
 }
 
-.cta-btn:hover {
+.ca-btn:hover {
     background-color: #00cc99;
     transform: scale(1.05);
 }
