@@ -13,7 +13,8 @@ body {
 /* Hero Section */
 /* Hero Section */
 .hero {
-    background: url('IMG_20241216_072142_437.jpg') center/cover no-repeat; /* Replace with your image */
+    background: url('https://raw.githubusercontent.com/1627-code/1627-code.github.io/main/IMG_20241216_072142_437.jpg') center/cover no-repeat;
+ /* Replace with your image */
     height: 60vh;
     display: flex;
     flex-direction: column;
