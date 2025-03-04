@@ -158,17 +158,26 @@ ul li::before {
     padding: 40px;
 }
 
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
 .blog-card {
     background: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-card:hover {
     transform: scale(1.05);
     background-color: #292929;
-}
+    b
 
 
 .blog-card h3 {
