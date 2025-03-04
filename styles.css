@@ -158,6 +158,7 @@ ul li::before {
     width: 300px; /* Adjust size */
     background: #1e1e1e;
     padding: 20px;
+    margin-right: 20px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
