@@ -1,41 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const blogGrid = document.getElementById("blogGrid");
-    const searchBar = document.getElementById("searchBar");
+// Search Functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const blogPosts = document.querySelectorAll(".blog-card");
 
-    // Sample blog data
-    const blogs = [
-        { title: "Cybersecurity Basics", description: "Understanding the fundamentals of cybersecurity." },
-        { title: "Penetration Testing 101", description: "A beginner's guide to ethical hacking." },
-        { title: "Dark Web Myths", description: "Exploring misconceptions about the dark web." },
-        { title: "AI in Cybersecurity", description: "How artificial intelligence is revolutionizing security." }
-    ];
-
-    // Function to display blogs
-    function displayBlogs(filteredBlogs) {
-        blogGrid.innerHTML = "";
-        filteredBlogs.forEach(blog => {
-            const blogCard = document.createElement("div");
-            blogCard.classList.add("blog-card");
-            blogCard.innerHTML = `
-                <h3>${blog.title}</h3>
-                <p>${blog.description}</p>
-                <a href="#" class="read-more">Read More</a>
-            `;
-            blogGrid.appendChild(blogCard);
+    searchInput.addEventListener("input", function () {
+        const searchText = searchInput.value.toLowerCase();
+        
+        blogPosts.forEach(post => {
+            const title = post.querySelector("h3").textContent.toLowerCase();
+            const description = post.querySelector("p").textContent.toLowerCase();
+            
+            if (title.includes(searchText) || description.includes(searchText)) {
+                post.style.display = "block";
+            } else {
+                post.style.display = "none";
+            }
         });
-    }
-
-    // Filter blogs based on search input
-    searchBar.addEventListener("input", () => {
-        const searchTerm = searchBar.value.toLowerCase();
-        const filteredBlogs = blogs.filter(blog =>
-            blog.title.toLowerCase().includes(searchTerm) ||
-            blog.description.toLowerCase().includes(searchTerm)
-        );
-        displayBlogs(filteredBlogs);
     });
-
-    // Initial display
-    displayBlogs(blogs);
 });
 
+// Hero Section Animation
+window.addEventListener("scroll", function () {
+    const hero = document.querySelector(".hero");
+    const scrolled = window.scrollY;
+    hero.style.opacity = 1 - scrolled / 400;
+});
