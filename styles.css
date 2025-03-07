@@ -37,7 +37,7 @@ nav {
 .hero {
     position: relative;
     height: 90vh;
-    background: url('your-background-image.jpg') no-repeat center center/cover;
+    background: url('IMG_20241216_072142_437.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,6 +76,7 @@ nav {
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
+    display: inline;
 }
 
 .btn:hover {
