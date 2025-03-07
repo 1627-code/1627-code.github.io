@@ -27,8 +27,13 @@ window.onload = function () {
     }
 
     loginBtn.addEventListener("click", function () {
-    let username = prompt("Enter Username:").trim();
-    let password = prompt("Enter Password:").trim();
+    let username = prompt("Enter Username:");
+    if (username === null) return; // If user cancels, stop execution
+    username = username.trim();
+
+    let password = prompt("Enter Password:");
+    if (password === null) return; // If user cancels, stop execution
+    password = password.trim();
 
     if (!username || !password) {
         alert("Username and password cannot be empty.");
