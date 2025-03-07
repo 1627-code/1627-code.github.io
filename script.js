@@ -14,7 +14,7 @@ window.onload = function () {
     console.log("All buttons found, continuing script...");
 
     const adminUsername = "admin";
-    const adminPassword = "password123";
+    const adminPassword = "Ebenezer2007@";
 
     function checkLoginStatus() {
         const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -27,23 +27,23 @@ window.onload = function () {
     }
 
     loginBtn.addEventListener("click", function () {
-        const username = prompt("Enter Username:");
-        const password = prompt("Enter Password:");
+    let username = prompt("Enter Username:").trim();
+    let password = prompt("Enter Password:").trim();
 
-        if (username === adminUsername && password === adminPassword) {
-            localStorage.setItem("isLoggedIn", "true");
-            checkLoginStatus();
-            alert("Login successful!");
-        } else {
-            alert("Incorrect username or password.");
-        }
-    });
+    if (!username || !password) {
+        alert("Username and password cannot be empty.");
+        return;
+    }
 
-    logoutBtn.addEventListener("click", function () {
-        localStorage.removeItem("isLoggedIn");
+    if (username === "admin" && password === "Ebenezer2007@") {
+        localStorage.setItem("isLoggedIn", "true");
         checkLoginStatus();
-        alert("Logged out successfully!");
-    });
+        alert("Login successful!");
+    } else {
+        alert("Incorrect username or password.");
+    }
+});
+
 
     checkLoginStatus();
 };
