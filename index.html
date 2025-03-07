@@ -11,88 +11,64 @@
 <body>
     <header>
         <nav>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
-
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="admin-controls">
+                <button id="writeBlogBtn" class="cta-btn hidden">Write a Blog</button>
+            </div>
+        </nav>
     </header>
-   <section class="hero">
-    <h1>Welcome to My Cybersecurity Journey</h1>
-    <p>Documenting my progress in ethical hacking, penetration testing, and cybersecurity.</p>
-    <button class="ca-btn" href="blog.html">Explore Blog</button>
-</section>
 
-<section class="blug-container">
-    <h2>Latest Blog Posts</h2>
-    <div class="blog-posts">
-        <div class="blog-card">
-            <h3>Getting Started with Ethical Hacking</h3>
-            <p>An introduction to ethical hacking and how to start your journey.</p>
-            <span class="blog-date">2025-03-04</span>
-            <a href="#" class="read-more">Read More</a>
+    <section class="hero">
+        <h1>Welcome to My Cybersecurity Journey</h1>
+        <p>Documenting my progress in ethical hacking, penetration testing, and cybersecurity.</p>
+        <a class="cta-btn" href="blog.html">Explore Blog</a>
+    </section>
+
+    <section class="blog-container">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-posts" id="blogPosts">
+            <!-- Blogs will be loaded dynamically -->
         </div>
+    </section>
 
-        <div class="blog-card">
-            <h3>Top 5 CTF Challenges for Beginners</h3>
-            <p>A list of beginner-friendly Capture The Flag (CTF) challenges to improve your skills.</p>
-            <span class="blog-date">2025-03-02</span>
-            <a href="#" class="read-more">Read More</a>
+    <section class="expect">
+        <h2>What to Expect</h2>
+        <div class="expect-grid">
+            <div class="expect-item">
+                <i class="fa-solid fa-user-secret expect-icon"></i>
+                <h3>Ethical Hacking</h3>
+                <p>Learn the fundamentals of ethical hacking and penetration testing.</p>
+            </div>
+
+            <div class="expect-item">
+                <i class="fa-solid fa-flag-checkered expect-icon"></i>
+                <h3>CTF Challenges</h3>
+                <p>Participate in Capture The Flag (CTF) challenges to enhance your skills.</p>
+            </div>
+
+            <div class="expect-item">
+                <i class="fa-solid fa-laptop-code expect-icon"></i>
+                <h3>Cybersecurity Tutorials</h3>
+                <p>Step-by-step guides on cybersecurity tools, exploits, and methodologies.</p>
+            </div>
+
+            <div class="expect-item">
+                <i class="fa-solid fa-users expect-icon"></i>
+                <h3>Community & Networking</h3>
+                <p>Connect with other cybersecurity enthusiasts and learn together.</p>
+            </div>
         </div>
-
-        <div class="blog-card">
-            <h3>How to Set Up a Home Lab for Cybersecurity</h3>
-            <p>A guide on setting up your own cybersecurity lab at home for practice.</p>
-            <span class="blog-date">2025-02-28</span>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="expect">
-    <h2>What to Expect</h2>
-    <div class="expect-grid">
-        <div class="expect-item">
-            <i class="fa-solid fa-user-secret expect-icon"></i>
-            <h3>Ethical Hacking</h3>
-            <p>Learn the fundamentals of ethical hacking and penetration testing.</p>
-        </div>
-
-        <div class="expect-item">
-            <i class="fa-solid fa-flag-checkered expect-icon"></i>
-            <h3>CTF Challenges</h3>
-            <p>Participate in Capture The Flag (CTF) challenges to enhance your skills.</p>
-        </div>
-
-        <div class="expect-item">
-            <i class="fa-solid fa-laptop-code expect-icon"></i>
-            <h3>Cybersecurity Tutorials</h3>
-            <p>Step-by-step guides on cybersecurity tools, exploits, and methodologies.</p>
-        </div>
-
-        <div class="expect-item">
-            <i class="fa-solid fa-users expect-icon"></i>
-            <h3>Community & Networking</h3>
-            <p>Connect with other cybersecurity enthusiasts and learn together.</p>
-        </div>
-    </div>
-</section>
-
-
-
+    </section>
 
     <footer>
         <p>© 2025 CyberSec Blog | Built with passion</p>
     </footer>
 
-
-
+    <script src="script.js"></script>
 </body>
 </html>
-<script src="script.js"></script>
-
