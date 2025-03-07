@@ -1,3 +1,4 @@
+<!-- Updated index.html with hidden admin controls -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,58 +17,17 @@
                 <a href="blog.html">Blog</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-            </div>
-            <div class="admin-controls">
-                <button id="writeBlogBtn" class="cta-btn hidden">Write a Blog</button>
+                <button id="login-btn" class="admin-only">Login</button>
+                <button id="logout-btn" class="admin-hidden">Logout</button>
             </div>
         </nav>
     </header>
-
-    <section class="hero">
+   <section class="hero">
         <h1>Welcome to My Cybersecurity Journey</h1>
         <p>Documenting my progress in ethical hacking, penetration testing, and cybersecurity.</p>
-        <a class="cta-btn" href="blog.html">Explore Blog</a>
+        <a href="blog.html" class="ca-btn">Explore Blog</a>
+        <button id="write-blog-btn" class="admin-hidden">Write a Blog</button>
     </section>
-
-    <section class="blog-container">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-posts" id="blogPosts">
-            <!-- Blogs will be loaded dynamically -->
-        </div>
-    </section>
-
-    <section class="expect">
-        <h2>What to Expect</h2>
-        <div class="expect-grid">
-            <div class="expect-item">
-                <i class="fa-solid fa-user-secret expect-icon"></i>
-                <h3>Ethical Hacking</h3>
-                <p>Learn the fundamentals of ethical hacking and penetration testing.</p>
-            </div>
-
-            <div class="expect-item">
-                <i class="fa-solid fa-flag-checkered expect-icon"></i>
-                <h3>CTF Challenges</h3>
-                <p>Participate in Capture The Flag (CTF) challenges to enhance your skills.</p>
-            </div>
-
-            <div class="expect-item">
-                <i class="fa-solid fa-laptop-code expect-icon"></i>
-                <h3>Cybersecurity Tutorials</h3>
-                <p>Step-by-step guides on cybersecurity tools, exploits, and methodologies.</p>
-            </div>
-
-            <div class="expect-item">
-                <i class="fa-solid fa-users expect-icon"></i>
-                <h3>Community & Networking</h3>
-                <p>Connect with other cybersecurity enthusiasts and learn together.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 CyberSec Blog | Built with passion</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
