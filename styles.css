@@ -1,5 +1,3 @@
-/* Updated CSS for a professional and polished look */
-
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -9,20 +7,23 @@ body {
     color: #333;
 }
 
-/* Navigation */
+/* Navigation Bar */
 nav {
+    background: #111;
+    padding: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background: #1e1e1e;
-    padding: 1rem 2rem;
 }
+
 .nav-links a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    margin: 0 1rem;
-    transition: 0.3s;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s;
 }
+
 .nav-links a:hover {
     color: #00bcd4;
 }
@@ -30,86 +31,118 @@ nav {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 4rem 2rem;
-    background: url('hero-bg.jpg') center/cover no-repeat;
-    color: #fff;
+    padding: 100px 20px;
+    background: #222;
+    color: white;
 }
+
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.5em;
     font-weight: 700;
-    margin-bottom: 1rem;
 }
+
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.2em;
+    margin-top: 10px;
+    opacity: 0.8;
 }
+
 .ca-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
     background: #00bcd4;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
+
 .ca-btn:hover {
-    background: #0195a3;
+    background: #0097a7;
 }
 
 /* Blog Section */
 .blog-container {
-    padding: 4rem 2rem;
+    padding: 50px;
+    text-align: center;
 }
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
 .blog-card {
-    background: #fff;
-    padding: 1.5rem;
-    margin: 1rem 0;
+    background: white;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
 .blog-card h3 {
-    margin-bottom: 0.5rem;
-    color: #00bcd4;
+    margin: 0;
+    color: #111;
 }
+
 .blog-card p {
-    color: #555;
+    font-size: 0.9em;
+    margin: 10px 0;
 }
+
 .read-more {
+    display: inline-block;
+    margin-top: 10px;
     color: #00bcd4;
+    font-weight: 600;
     text-decoration: none;
-    font-weight: bold;
 }
+
 .read-more:hover {
     text-decoration: underline;
 }
 
-/* What to Expect */
+/* What to Expect Section */
 .expect {
     text-align: center;
-    padding: 4rem 2rem;
-    background: #fff;
+    padding: 50px;
+    background: white;
 }
+
 .expect-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: 20px;
+    margin-top: 20px;
 }
+
 .expect-item {
-    background: #f9f9f9;
-    padding: 1.5rem;
+    background: #f4f4f4;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .expect-icon {
-    font-size: 2rem;
+    font-size: 2em;
     color: #00bcd4;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
+    background: #111;
+    color: white;
     text-align: center;
-    padding: 1.5rem;
-    background: #1e1e1e;
-    color: #fff;
-    margin-top: 2rem;
+    padding: 15px;
+    margin-top: 50px;
 }
+
