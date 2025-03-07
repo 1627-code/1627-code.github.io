@@ -20,24 +20,21 @@ window.onload = function () {
     const ADMIN_PASSWORD = "Ebenezer2007@";
 
     // Function to check login status
-    function checkLoginStatus() {
-        const storedUsername = localStorage.getItem("username");
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+   function checkLoginStatus() {
+    const storedUsername = localStorage.getItem("username");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-        console.log(`Login status: ${isLoggedIn}, Username: ${storedUsername}`);
+    console.log(`Login status: ${isLoggedIn}, Username: ${storedUsername}`);
 
-        if (isLoggedIn && storedUsername) {
-            loginBtn.style.display = "none";
-            logoutBtn.style.display = "inline-block";
-            writeBlogBtn.style.display = "inline-block";
-            profileIcon.style.display = "inline-block";
-        } else {
-            loginBtn.style.display = "inline-block";
-            logoutBtn.style.display = "none";
-            writeBlogBtn.style.display = "none";
-            profileIcon.style.display = "none";
-        }
+    loginBtn.style.display = isLoggedIn ? "none" : "inline-block";
+    logoutBtn.style.display = isLoggedIn ? "inline-block" : "none";
+    writeBlogBtn.style.display = isLoggedIn ? "inline-block" : "none";
+
+    if (profileIcon) {
+        profileIcon.style.display = isLoggedIn ? "inline-block" : "none";
+        console.log(`Profile icon visibility: ${profileIcon.style.display}`);
     }
+}
 
     // Function to handle login
     function handleLogin() {
