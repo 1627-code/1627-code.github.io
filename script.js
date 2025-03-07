@@ -1,42 +1,45 @@
-// Updated script.js with profile icon for login/logout
-
 document.addEventListener("DOMContentLoaded", function () {
-    const loginButton = document.getElementById("login-btn");
-    const logoutButton = document.getElementById("logout-btn");
-    const profileIcon = document.getElementById("profile-icon");
-    const profileDropdown = document.getElementById("profile-dropdown");
-    const writeBlogButton = document.getElementById("write-blog-btn");
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const writeBlogBtn = document.getElementById("writeBlogBtn");
+    const profileIcon = document.getElementById("profileIcon");
     
-    // Check login status from localStorage
-    let isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    updateUI(isLoggedIn);
+    const adminUsername = "admin";
+    const adminPassword = "password123";
     
-    // Show/hide dropdown
-    profileIcon.addEventListener("click", function () {
-        profileDropdown.classList.toggle("hidden");
-    });
-    
-    loginButton.addEventListener("click", function () {
-        localStorage.setItem("loggedIn", "true");
-        updateUI(true);
-    });
-    
-    logoutButton.addEventListener("click", function () {
-        localStorage.setItem("loggedIn", "false");
-        updateUI(false);
-    });
-    
-    function updateUI(isLoggedIn) {
+    function checkLoginStatus() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
         if (isLoggedIn) {
-            profileIcon.style.display = "block";
-            loginButton.style.display = "none";
-            logoutButton.style.display = "block";
-            writeBlogButton.style.display = "inline-block";
+            loginBtn.style.display = "none";
+            logoutBtn.style.display = "inline-block";
+            writeBlogBtn.style.display = "inline-block";
+            profileIcon.style.display = "inline-block";
         } else {
-            profileIcon.style.display = "block";
-            loginButton.style.display = "block";
-            logoutButton.style.display = "none";
-            writeBlogButton.style.display = "none";
+            loginBtn.style.display = "inline-block";
+            logoutBtn.style.display = "none";
+            writeBlogBtn.style.display = "none";
+            profileIcon.style.display = "none";
         }
     }
+    
+    loginBtn.addEventListener("click", function () {
+        const username = prompt("Enter Username:");
+        const password = prompt("Enter Password:");
+        
+        if (username === adminUsername && password === adminPassword) {
+            localStorage.setItem("isLoggedIn", "true");
+            checkLoginStatus();
+            alert("Login successful!");
+        } else {
+            alert("Incorrect username or password.");
+        }
+    });
+    
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        checkLoginStatus();
+        alert("Logged out successfully!");
+    });
+    
+    checkLoginStatus();
 });
