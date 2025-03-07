@@ -174,3 +174,13 @@ nav {
 #loginBtn:hover, #logoutBtn:hover {
     background: #0097a7;
 }
+
+a {
+    text-decoration: none; /* Removes underline */
+}
+
+a .btn {
+    display: inline-block; /* Ensures button styling is applied */
+    text-decoration: none; /* Ensures no underline */
+}
+
