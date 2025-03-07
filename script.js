@@ -1,36 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const loginButton = document.getElementById("login-btn");
-    const logoutButton = document.getElementById("logout-btn");
-    const writeBlogButton = document.getElementById("write-blog-btn");
-    const adminOptions = document.querySelectorAll(".admin-only");
+    const profileIcon = document.getElementById("profile-icon");
+    const profileMenu = document.getElementById("profile-menu");
+    const writeBlogBtn = document.getElementById("write-blog-btn");
+    const logoutBtn = document.getElementById("logout-btn");
 
-    function checkLoginStatus() {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        if (isLoggedIn) {
-            adminOptions.forEach(el => el.style.display = "block");
-            loginButton.style.display = "none";
-            logoutButton.style.display = "block";
+    // Simulating authentication state
+    let isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+
+    function updateUI() {
+        if (isAuthenticated) {
+            profileMenu.classList.remove("hidden");
+            writeBlogBtn.style.display = "block";
+            logoutBtn.style.display = "block";
         } else {
-            adminOptions.forEach(el => el.style.display = "none");
-            loginButton.style.display = "block";
-            logoutButton.style.display = "none";
+            profileMenu.classList.add("hidden");
+            writeBlogBtn.style.display = "none";
+            logoutBtn.style.display = "none";
         }
     }
 
-    loginButton.addEventListener("click", function () {
-        const password = prompt("Enter Admin Password:");
-        if (password === "your-secure-password") {  // Change this to a more secure method later
-            localStorage.setItem("isLoggedIn", "true");
-            checkLoginStatus();
-        } else {
-            alert("Incorrect password!");
-        }
+    profileIcon.addEventListener("click", function () {
+        profileMenu.classList.toggle("hidden");
     });
 
-    logoutButton.addEventListener("click", function () {
-        localStorage.removeItem("isLoggedIn");
-        checkLoginStatus();
+    logoutBtn.addEventListener("click", function () {
+        isAuthenticated = false;
+        localStorage.setItem("isAuthenticated", "false");
+        updateUI();
     });
 
-    checkLoginStatus();
+    // Simulate login for demo purposes
+    profileIcon.addEventListener("dblclick", function () {
+        isAuthenticated = true;
+        localStorage.setItem("isAuthenticated", "true");
+        updateUI();
+    });
+
+    updateUI();
 });
