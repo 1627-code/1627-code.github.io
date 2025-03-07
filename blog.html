@@ -3,35 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
+    <title>Blogs</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            color: white;
+        }
+        
+        /* Navigation Bar */
+        nav {
+            background: rgba(17, 17, 17, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5);
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+        }
+        
+        /* Hero Section */
+        .blog-hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #000428, #004e92);
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Search Bar */
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        #searchBar {
+            width: 60%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .blog-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 188, 212, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .read-more {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-    <header>
-        <nav>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="blog.html">Blog</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
+    <!-- Hero Section -->
+    <header class="blog-hero">
+        <h1>Explore Blogs</h1>
+        <p>Dive into my journey through cybersecurity, hacking, and tech insights.</p>
     </header>
 
-    <section class="blog-container">
-        <h2>Blog Posts</h2>
-        <div id="blogPosts" class="blog-posts">
-            <!-- Blogs will be inserted here dynamically -->
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search blogs..." onkeyup="searchBlogs()">
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-grid" id="blogGrid">
+        <div class="blog-card">
+            <img src="blog1.jpg" alt="Blog Thumbnail">
+            <h3>Understanding Ethical Hacking</h3>
+            <p>Introduction to ethical hacking and its importance.</p>
+            <a href="blog1.html" class="read-more">Read More</a>
+        </div>
+        <div class="blog-card">
+            <img src="blog2.jpg" alt="Blog Thumbnail">
+            <h3>Cybersecurity Basics</h3>
+            <p>Key concepts and foundational knowledge in cybersecurity.</p>
+            <a href="blog2.html" class="read-more">Read More</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>© 2025 CyberSec Blog | Built with passion</p>
+        <p>&copy; 2025 Ebenezer Evero | My Cybersecurity Journey</p>
     </footer>
 
-    <script src="blog.js"></script>
-
+    <script>
+        function searchBlogs() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let blogCards = document.getElementsByClassName('blog-card');
+            
+            for (let card of blogCards) {
+                let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
