@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkLoginStatus() {
         const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+        console.log("Login status:", isLoggedIn); // Debugging log
+
         if (isLoggedIn) {
             if (loginBtn) loginBtn.style.display = "none";
             if (logoutBtn) logoutBtn.style.display = "inline-block";
@@ -20,6 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (writeBlogBtn) writeBlogBtn.style.display = "none";
             if (profileIcon) profileIcon.style.display = "none";
         }
+
+        console.log("Elements updated:", {
+            loginBtn: loginBtn ? loginBtn.style.display : "Not found",
+            logoutBtn: logoutBtn ? logoutBtn.style.display : "Not found",
+            writeBlogBtn: writeBlogBtn ? writeBlogBtn.style.display : "Not found",
+            profileIcon: profileIcon ? profileIcon.style.display : "Not found",
+        }); // Debugging log
     }
 
     if (loginBtn) {
@@ -47,4 +57,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     checkLoginStatus();
 });
-
