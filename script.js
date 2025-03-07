@@ -1,17 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const blogContainer = document.getElementById("blog-posts");
+// script.js
 
-    fetch("posts.json")
-        .then(res => res.json())
-        .then(posts => {
-            blogContainer.innerHTML = posts.map(post => `
-                <div class="post-card">
-                    <h3>${post.title}</h3>
-                    <p>${post.summary}</p>
-                    <span class="post-date">${post.date}</span>
-                    <a href="${post.link}" class="read-more">Read More</a>
-                </div>
-            `).join('');
-        })
-        .catch(error => console.error("Error loading posts:", error));
+document.addEventListener("DOMContentLoaded", function () {
+    loadBlogPosts();
+
+    // Handle "Write a Blog" button visibility
+    const writeBlogBtn = document.getElementById("writeBlogBtn");
+    if (isAdmin()) {
+        writeBlogBtn.classList.remove("hidden");
+        writeBlogBtn.addEventListener("click", function () {
+            window.location.href = "write-blog.html";
+        });
+    }
 });
+
+// Function to check if the user is an admin (Temporary basic check)
+function isAdmin() {
+    // You can replace this with an actual login system later
+    return true; // Change to false if you want to hide the button
+}
+
+// Load Blog Posts from Local Storage
+function loadBlogPosts() {
+    const blogContainer = document.getElementById("blogPosts");
+    const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+    if (blogs.length === 0) {
+        blogContainer.innerHTML = "<p>No blog posts yet. Be the first to write one!</p>";
+        return;
+    }
+
+    blogContainer.innerHTML = ""; // Clear previous content
+
+    blogs.forEach(blog => {
+        const blogCard = document.createElement("div");
+        blogCard.classList.add("blog-card");
+
+        blogCard.innerHTML = `
+            <h3>${blog.title}</h3>
+            <p>${blog.description}</p>
+            <span class="blog-date">${blog.date}</span>
+            <a href="blog-post.html?id=${blog.id}" class="read-more">Read More</a>
+        `;
+
+        blogContainer.appendChild(blogCard);
+    });
+}
