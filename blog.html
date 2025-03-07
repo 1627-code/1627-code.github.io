@@ -4,39 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1627-ebenezer|blog</title>
-    <link rel="stylesheet" href="blog.css">
-    <script src="blog.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <nav>
-        <div class="logo">CyberSec Blog</div>
-        <a href="index.html">Home</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <input type="text" id="searchBar" placeholder="Search blogs...">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore-blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1 class="glitch-text">Explore Cyber Blogs</h1>
-        <div class="animation-container">
-            <lottie-player 
-                src="https://assets6.lottiefiles.com/packages/lf20_kcsr6fcp.json"  
-                background="transparent"  
-                speed="1"  
-                loop  
-                autoplay>
-            </lottie-player>
+    
+    <header class="hero">
+        <h1>Explore Our Blogs</h1>
+        <p>Stay updated with the latest in cybersecurity</p>
+    </header>
+    
+    <section class="search-container">
+        <input type="text" id="searchBar" placeholder="Search blogs...">
+        <button id="searchBtn">Search</button>
+    </section>
+    
+    <section class="blog-list">
+        <div class="blog-item">
+            <h2>Understanding Phishing Attacks</h2>
+            <p>A deep dive into phishing techniques and how to protect yourself.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
+        <div class="blog-item">
+            <h2>Top 5 Cybersecurity Tools</h2>
+            <p>Essential tools every cybersecurity enthusiast should know.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <!-- More blog items dynamically loaded -->
     </section>
-
-    <!-- Blog Grid -->
-    <section class="blog-container">
-        <div id="blogGrid"></div>
-    </section>
-
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
