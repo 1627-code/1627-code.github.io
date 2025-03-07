@@ -127,13 +127,52 @@ nav {
     text-decoration: underline;
 }
 
+.expect {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.8); /* Darker contrast for better readability */
+    color: white;
+}
+
+.expect h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.expect-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.expect-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.expect-item:hover {
+    transform: scale(1.05);
+}
+
+.expect-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
 /* Footer */
 footer {
-    background: rgba(17, 17, 17, 0.9);
-    color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 50px;
+    padding: 20px;
+    background: #111; /* Darker for a premium feel */
+    color: #aaa; /* Softer color for professional contrast */
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #loginBtn, #logoutBtn {
