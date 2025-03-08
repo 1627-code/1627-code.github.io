@@ -44,6 +44,10 @@ nav {
     height: 100vh; /* Ensures vertical centering */
     padding: 20px;
 }
+.contact-info {
+   justify-content: center;
+    align-items: center; 
+}
 
 /* Form Styling */
 .contact-form {
@@ -95,6 +99,12 @@ nav {
     .contact-container {
         height: auto;
         padding: 50px 20px;
+        display: block;
+    }
+
+    .contact-info {
+   justify-content: center;
+    align-items: center; 
     }
 
     .contact-form {
