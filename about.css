@@ -104,5 +104,23 @@ footer {
     .about-image img {
         width: 200px;
     }
+
+     footer {
+        position: relative; /* Change from fixed to relative for smaller screens */
+        bottom: auto; /* Remove the fixed bottom placement */
+        padding: 20px;
+    }
+
+    .social-links {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        font-size: 1.5em; /* Increase icon size for better visibility */
+        margin: 10px; /* Add spacing for touch-friendly interaction */
+    }
 }
 
