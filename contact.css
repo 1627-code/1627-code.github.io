@@ -52,38 +52,41 @@ nav {
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
     width: 100%;
-    max-width: 500px;
+    max-width: 500px; /* Adjust the form width */
+    margin: 0 auto; /* Ensures it's centered */
+    padding: 20px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
+    width: 100%; /* Ensures full width inside the form */
+    max-width: 450px; /* Matches form width */
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     border: 2px solid #00bcd4;
     border-radius: 5px;
-    background: #111;
+    background: black;
     color: white;
-    outline: none;
 }
 
 .contact-form button {
     background: #00bcd4;
-    color: white;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 .contact-form button:hover {
-    background: #008c9e;
+    background: white;
+    color: #00bcd4;
 }
 
 footer {
