@@ -7,55 +7,42 @@ window.onload = function () {
     const writeBlogBtn = document.getElementById("writeBlogBtn");
     const profileIcon = document.getElementById("profileIcon");
 
-    // Ensure all required elements exist
+    // Ensure elements exist
     if (!loginBtn || !logoutBtn || !writeBlogBtn || !profileIcon) {
-        console.error("One or more required buttons were not found in the HTML!");
-        return;
+        console.warn("Some elements not found. Ensure they exist in your HTML.");
     }
 
-    console.log("All buttons found, continuing script...");
-
-    // Default admin credentials
+    // Default admin credentials (DO NOT store passwords in plain text)
     const ADMIN_USERNAME = "admin";
-    const ADMIN_PASSWORD = "Ebenezer2007@";
+    const ADMIN_PASSWORD = "Ebenezer2007@"; // Ideally, use backend authentication
 
-    // Function to check login status
-   function checkLoginStatus() {
-    const storedUsername = localStorage.getItem("username");
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    // Check login status
+    function checkLoginStatus() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        const storedUsername = localStorage.getItem("username");
 
-    console.log(`Login status: ${isLoggedIn}, Username: ${storedUsername}`);
+        console.log(`Login status: ${isLoggedIn}, Username: ${storedUsername}`);
 
-    loginBtn.style.display = isLoggedIn ? "none" : "inline-block";
-    logoutBtn.style.display = isLoggedIn ? "inline-block" : "none";
-    writeBlogBtn.style.display = isLoggedIn ? "inline-block" : "none";
-
-    if (profileIcon) {
-        profileIcon.style.display = isLoggedIn ? "inline-block" : "none";
-        console.log(`Profile icon visibility: ${profileIcon.style.display}`);
+        // Toggle elements based on login status
+        if (loginBtn) loginBtn.style.display = isLoggedIn ? "none" : "inline-block";
+        if (logoutBtn) logoutBtn.style.display = isLoggedIn ? "inline-block" : "none";
+        if (writeBlogBtn) writeBlogBtn.style.display = isLoggedIn ? "inline-block" : "none";
+        if (profileIcon) profileIcon.style.display = isLoggedIn ? "inline-block" : "none";
     }
-}
 
-    // Function to handle login
+    // Handle login
     function handleLogin() {
-        let username = prompt("Enter Username:");
-        if (username === null) return; // If user cancels, exit
-        username = username.trim();
+        const username = prompt("Enter Username:")?.trim();
+        const password = prompt("Enter Password:")?.trim();
 
-        let password = prompt("Enter Password:");
-        if (password === null) return; // If user cancels, exit
-        password = password.trim();
-
-        // Ensure both fields are filled
         if (!username || !password) {
             alert("Username and password cannot be empty.");
             return;
         }
 
-        // Validate credentials
         if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
             localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("username", username); // Store username
+            localStorage.setItem("username", username);
             checkLoginStatus();
             alert(`Welcome, ${username}! Login successful.`);
         } else {
@@ -63,18 +50,27 @@ window.onload = function () {
         }
     }
 
-    // Function to handle logout
+    // Handle logout
     function handleLogout() {
         localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("username"); // Clear username
+        localStorage.removeItem("username");
         checkLoginStatus();
         alert("Logged out successfully!");
     }
 
-    // Attach event listeners
-    loginBtn.addEventListener("click", handleLogin);
-    logoutBtn.addEventListener("click", handleLogout);
+    // Toggle login button with Ctrl + L
+    document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.key.toLowerCase() === "l") {
+            if (loginBtn) {
+                loginBtn.classList.toggle("hidden");
+            }
+        }
+    });
 
-    // Initial check
+    // Attach event listeners
+    loginBtn?.addEventListener("click", handleLogin);
+    logoutBtn?.addEventListener("click", handleLogout);
+
+    // Initialize login status
     checkLoginStatus();
 };
