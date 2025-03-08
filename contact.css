@@ -7,6 +7,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
 
 /* Navigation Bar */
@@ -119,15 +120,18 @@ nav {
     .contact-container {
         height: auto;
         padding: 50px 20px;
+        justify-content: center;
+        align-items: center;
     }
 
     .contact-form {
-        max-width: 70%;
+        max-width: 80%;
     }
 
     .contact-form input,
     .contact-form textarea {
         max-width: 100%;
+        align-items: center;
     }
 }
 
