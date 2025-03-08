@@ -27,7 +27,10 @@ nav {
 .nav-links {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .nav-links a {
@@ -37,11 +40,21 @@ nav {
     font-weight: 500;
     transition: color 0.3s;
     text-align: center;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
     color: #00bcd4;
     text-shadow: 0px 0px 10px #00bcd4;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: row; /* Keep items in a row */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        justify-content: center;
+        gap: 10px;
+    }
 }
 
 /* Hero Section */
@@ -76,7 +89,7 @@ nav {
     .hero-video {
         width: 120vw; /* Extend video width */
         height: 100vh;
-        transform: translateX(60vw); /* Shift video to the right */
+        transform: translateX(-60vw); /* Shift video to the right */
     }
 }
 
@@ -189,4 +202,3 @@ nav {
      display: inline-block;
      text-decoration: none;
  }
-
