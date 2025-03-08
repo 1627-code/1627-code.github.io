@@ -39,16 +39,34 @@ nav {
 /* Ensure the entire page is centered */
 .contact-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height to center vertically */
+    height: 100vh; /* Full height for centering */
     padding: 20px;
     text-align: center; /* Centers the text content */
 }
 
+/* Contact Info Styling */
+.contact-info {
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
 /* Form Styling */
 .contact-form {
-    background: rgba(255, 255, 255, 0.1); /* Transparent form for blending */
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5);
@@ -111,6 +129,7 @@ nav {
         max-width: 100%;
     }
 }
+
 
 
 
