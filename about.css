@@ -1,12 +1,21 @@
-body {
+/* Remove horizontal scrolling */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, rgba(0, 47, 75, 0.9), rgba(0, 0, 0, 0.9)), url('benny2.jpg') no-repeat center center/cover;
+    background: linear-gradient(to bottom, rgba(0, 47, 75, 0.9), rgba(0, 0, 0, 0.9)), 
+                url('benny2.jpg') no-repeat center center/cover;
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    overflow-x: hidden; /* Extra protection against horizontal scroll */
 }
 
 /* Navigation Bar */
@@ -23,12 +32,19 @@ nav {
     z-index: 1000;
 }
 
+.nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 500;
     transition: color 0.3s;
+    text-align: center;
 }
 
 .nav-links a:hover {
@@ -36,16 +52,18 @@ nav {
     text-shadow: 0px 0px 10px #00bcd4;
 }
 
-
-
+/* About Section */
 .about-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
     padding: 50px;
+    text-align: center;
+    width: 100%;
 }
 
+/* Image Styling */
 .about-image img {
     width: 300px;
     height: auto;
@@ -53,6 +71,7 @@ nav {
     box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5);
 }
 
+/* Text Content */
 .about-content {
     max-width: 600px;
     margin-left: 50px;
@@ -63,20 +82,29 @@ nav {
     margin-bottom: 10px;
 }
 
+/* Social Links */
 .social-links {
     margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .social-links a {
-    margin-right: 10px;
+    margin: 10px;
     color: #00bcd4;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
     transition: color 0.3s ease;
-    display: inline-block; /* Ensures the icons are always visible */
 }
+
 .social-links a:hover {
     color: white;
+}
+
+/* Ensure Footer Appears at Bottom */
+.main-content {
+    flex: 1;
 }
 
 footer {
@@ -84,16 +112,15 @@ footer {
     padding: 15px;
     background: #121212;
     color: #00bcd4;
-    position: fixed;
     width: 100%;
-    bottom: 0;
 }
 
-/* Responsive Design */
+/* Responsive Fixes */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
         text-align: center;
+        padding: 30px 20px; /* Adjust padding */
     }
 
     .about-content {
@@ -105,31 +132,13 @@ footer {
         width: 200px;
     }
 
-     footer {
-        position: relative; /* Change from fixed to relative for smaller screens */
-        bottom: auto; /* Remove the fixed bottom placement */
-        padding: 20px;
+    /* Ensure footer does not have unnecessary space */
+    footer {
+        position: relative;
+        bottom: auto;
+        padding: 15px;
+        margin-top: auto; /* Ensures it stays at the bottom */
     }
-
-    .social-links {
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .social-links a {
-        font-size: 1.5em; /* Increase icon size for better visibility */
-        margin: 10px; /* Add spacing for touch-friendly interaction */
-    }
-/*    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 5px 0; /* Reduces spacing for mobile screens */
-    } */
 }
 
 
