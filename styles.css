@@ -5,6 +5,10 @@ body, html {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
+/* Hidden Class */
+.hidden {
+     display: none;
+}
 
 /* Navigation Bar */
 nav {
@@ -59,7 +63,6 @@ nav {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -153,18 +156,11 @@ nav {
  .expect-item:hover {
      transform: translateY(-5px);
  }
- 
- /* Footer */
- .footer {
-     text-align: center;
- @@ -155,61 +125,18 @@
- @media (max-width: 768px) {
-    /* Fix for Mobile View */
 @media (max-width: 768px) {
     .hero-video {
         width: 120vw; /* Makes the video wider */
         height: 100vh; /* Stays full height */
-        transform: translateX(-25vw); /* Moves the video to the left */
+        transform: translateX(25vw); /* Moves the video to the left */
     }
     .hero-btn {
         flex-direction: column;
@@ -213,7 +209,4 @@ nav {
      text-decoration: none;
  }
  
- /* Hidden Class */
- .hidden {
-     display: none;
- }
+
