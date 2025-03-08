@@ -89,7 +89,7 @@ nav {
     .hero-video {
         width: 120vw; /* Extend video width */
         height: 100vh;
-        transform: translateX(-60vw); /* Shift video to the right */
+        transform: translateX(-100vw); /* Shift video to the right */
     }
 }
 
