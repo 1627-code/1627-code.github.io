@@ -12,11 +12,14 @@ window.onload = function () {
         console.warn("Some elements not found. Ensure they exist in your HTML.");
     }
 
-    // Default admin credentials (DO NOT store passwords in plain text)
+    // Default admin credentials (Avoid storing credentials in plain text in production)
     const ADMIN_USERNAME = "admin";
-    const ADMIN_PASSWORD = "Ebenezer2007@"; // Ideally, use backend authentication
+    const ADMIN_PASSWORD = "Ebenezer2007@"; 
 
-    // Check login status
+    // Hide login button by default
+    if (loginBtn) loginBtn.style.display = "none";
+
+    // Function to check login status
     function checkLoginStatus() {
         const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
         const storedUsername = localStorage.getItem("username");
@@ -24,13 +27,13 @@ window.onload = function () {
         console.log(`Login status: ${isLoggedIn}, Username: ${storedUsername}`);
 
         // Toggle elements based on login status
-        if (loginBtn) loginBtn.style.display = isLoggedIn ? "none" : "inline-block";
+        if (loginBtn) loginBtn.style.display = isLoggedIn ? "none" : "none"; // Always hidden until Shift + L is pressed
         if (logoutBtn) logoutBtn.style.display = isLoggedIn ? "inline-block" : "none";
         if (writeBlogBtn) writeBlogBtn.style.display = isLoggedIn ? "inline-block" : "none";
         if (profileIcon) profileIcon.style.display = isLoggedIn ? "inline-block" : "none";
     }
 
-    // Handle login
+    // Function to handle login
     function handleLogin() {
         const username = prompt("Enter Username:")?.trim();
         const password = prompt("Enter Password:")?.trim();
@@ -50,7 +53,7 @@ window.onload = function () {
         }
     }
 
-    // Handle logout
+    // Function to handle logout
     function handleLogout() {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("username");
@@ -58,11 +61,11 @@ window.onload = function () {
         alert("Logged out successfully!");
     }
 
-    // Toggle login button with Ctrl + L
+    // Toggle login button with Shift + L
     document.addEventListener("keydown", function (event) {
-        if (event.ctrlKey && event.key.toLowerCase() === "l") {
+        if (event.shiftKey && event.key.toLowerCase() === "l") {
             if (loginBtn) {
-                loginBtn.classList.toggle("hidden");
+                loginBtn.style.display = loginBtn.style.display === "none" ? "inline-block" : "none";
             }
         }
     });
