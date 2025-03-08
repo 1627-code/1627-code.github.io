@@ -1,13 +1,21 @@
-body {
+/* Remove horizontal scrolling */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, rgba(0, 47, 75, 0.9), rgba(0, 0, 0, 0.9)), url('benny3.jpg') no-repeat center center/cover;
+    background: linear-gradient(to bottom, rgba(0, 47, 75, 0.9), rgba(0, 0, 0, 0.9)), 
+                url('benny3.jpg') no-repeat center center/cover;
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
+    overflow-x: hidden; /* Extra protection against horizontal scroll */
 }
 
 /* Navigation Bar */
@@ -24,12 +32,19 @@ nav {
     z-index: 1000;
 }
 
+.nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 500;
     transition: color 0.3s;
+    text-align: center;
 }
 
 .nav-links a:hover {
@@ -43,15 +58,15 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height for centering */
-    padding: 20px;
-    text-align: center; /* Centers the text content */
+    text-align: center;
+    width: 100%;
+    padding: 80px 20px 20px; /* Ensure spacing from fixed nav */
     margin-top: 30px;
 }
 
-/* Contact Info Styling */
+/* Contact Info */
 .contact-info {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: white;
     text-align: center;
 }
@@ -66,36 +81,42 @@ nav {
     margin: 5px 0;
 }
 
-/* Form Styling */
+/* Contact Form */
 .contact-form {
-    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    background: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Keeps form elements centered */
+    align-items: center;
     width: 100%;
     max-width: 500px;
-    margin: auto; /* Ensures centering */
+    margin: auto;
 }
 
 /* Input Fields */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     padding: 12px;
     margin: 10px 0;
     border: 2px solid #00bcd4;
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.8); /* Slight transparency */
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     outline: none;
-    text-align: left; /* Align text inside input */
+    text-align: left;
 }
 
-/* Button Styling */
+/* Adjust Textarea */
+.contact-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Button */
 .contact-form button {
     background: #00bcd4;
     color: black;
@@ -115,29 +136,9 @@ nav {
     color: #00bcd4;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .contact-container {
-        height: auto;
-        padding: 50px 20px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .contact-form {
-        max-width: 80%;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        max-width: 100%;
-        align-items: center;
-    }
-}
-
-
+/* Ensure Footer Appears at Bottom */
 .main-content {
-    flex: 1; /* Makes it take the full remaining space */
+    flex: 1;
 }
 
 footer {
@@ -146,4 +147,33 @@ footer {
     background: #121212;
     color: #00bcd4;
     width: 100%;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .contact-container {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .contact-form {
+        max-width: 90%; /* Reduce width for smaller screens */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    /* Ensure text fields don't exceed screen width */
+    .contact-form input, 
+    .contact-form textarea {
+        width: 90%;
+    }
+
+    /* Center the footer properly */
+    footer {
+        text-align: center;
+    }
 }
