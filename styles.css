@@ -157,9 +157,6 @@ nav {
         width: 40px;
         height: 40px;
     }
-    #loginBtn {
-        display: none;
-    }
 }
 
 /* Login & Logout Buttons */
@@ -185,5 +182,8 @@ a {
 a .btn {
     display: inline-block; /* Ensures button styling is applied */
     text-decoration: none; /* Ensures no underline */
+}
+.hidden {
+    display: none;
 }
 
