@@ -73,8 +73,9 @@ nav ul li a:hover {
     text-decoration: none;
     font-size: 1.2em;
     transition: color 0.3s ease;
+    display: inline-block; /* Ensures the icons are always visible */
+    font-size: 1.2em;
 }
-
 .social-links a:hover {
     color: white;
 }
@@ -123,4 +124,6 @@ footer {
         margin: 10px; /* Add spacing for touch-friendly interaction */
     }
 }
+
+
 
