@@ -24,7 +24,7 @@ nav {
 }
 
 /* Centered Navigation Links */
-.nav-links {
+nav li {
     display: flex;
     gap: 25px;
 }
@@ -38,7 +38,7 @@ nav {
     padding: 10px 15px;
 }
 
-.nav-links a:hover {
+nav li a:hover {
     color: #00bcd4;
     text-shadow: 0px 0px 10px #00bcd4;
 }
@@ -86,6 +86,7 @@ nav {
     height: 75vh;
     background: url('benny1.jpg') no-repeat center center/cover;
     display: flex;
+    right: 30px; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
