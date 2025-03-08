@@ -121,7 +121,6 @@ footer {
         flex-direction: column;
         text-align: center;
         padding: 30px 20px; /* Adjust padding */
-        margin-top: 50px;
     }
 
     .about-content {
@@ -131,6 +130,7 @@ footer {
 
     .about-image img {
         width: 200px;
+        margin-top: 50px;
     }
 
     /* Ensure footer does not have unnecessary space */
