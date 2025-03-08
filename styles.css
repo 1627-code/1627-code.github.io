@@ -6,12 +6,12 @@ body, html {
     overflow-x: hidden;
 }
 
-/* Navigation Bar - Now Matches Contact Page */
+/* Navigation Bar */
 nav {
     background: rgba(17, 17, 17, 0.9);
     padding: 12px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5);
     position: fixed;
@@ -20,20 +20,18 @@ nav {
     z-index: 1000;
 }
 
+/* Centered Nav Links */
 .nav-links {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    gap: 20px;
 }
 
+/* Normal Text Styling for Nav */
 .nav-links a {
-    font-size: 16px;  /* Matches the contact page */
-    font-weight: 600;  /* Bolder text */
-    letter-spacing: 0.5px; /* Adds spacing like contact page */
-    text-transform: uppercase;  /* Matches contact page style */
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: normal;
     transition: color 0.3s, text-shadow 0.3s;
 }
 
@@ -121,9 +119,54 @@ nav {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero {
+
+
+/* Admin Image */
+ .img {
+     position: absolute;
+     top: 10px;
+     right: 30px;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     object-fit: cover;
+ }
+ 
+ /* What to Expect Section */
+ .expect {
+     padding: 40px 20px;
+     background: linear-gradient(to bottom, #002f4b, #000);
+     color: white;
+     text-align: center;
+     min-height: 60vh;
+ }
+ 
+ .expect-grid {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     flex-wrap: wrap;
+ }
+ 
+ .expect-item {
+     background: rgba(255, 255, 255, 0.1);
+     padding: 15px;
+     border-radius: 10px;
+     width: 280px;
+     text-align: center;
+     transition: transform 0.3s ease-in-out;
+ }
+ 
+ .expect-item:hover {
+     transform: translateY(-5px);
+ }
+ 
+ /* Footer */
+ .footer {
+     text-align: center;
+ @@ -155,61 +125,18 @@
+ @media (max-width: 768px) {
+      .hero {
         height: 75vh;
         padding: 20px;
     }
@@ -137,6 +180,50 @@ nav {
         flex-direction: column;
         gap: 10px;
     }
-}
-
-
+ 
+     .expect-grid {
+     .hero-btn {
+         flex-direction: column;
+         align-items: center;
+     }
+ 
+     .expect-item {
+         width: 90%;
+     }
+ 
+     .img {
+         width: 40px;
+         height: 40px;
+         gap: 10px;
+     }
+ }
+ 
+ /* Login & Logout Buttons */
+ #loginBtn, #logoutBtn {
+     padding: 8px 15px;
+     background: #00bcd4;
+     color: white;
+     font-weight: bold;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background 0.3s;
+ }
+ 
+ #loginBtn:hover, #logoutBtn:hover {
+     background: #0097a7;
+ }
+ 
+ a {
+     text-decoration: none;
+ }
+ 
+ a .btn {
+     display: inline-block;
+     text-decoration: none;
+ }
+ 
+ /* Hidden Class */
+ .hidden {
+     display: none;
+ }
