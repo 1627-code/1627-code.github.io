@@ -45,6 +45,7 @@ nav {
     height: 100vh; /* Full height for centering */
     padding: 20px;
     text-align: center; /* Centers the text content */
+    margin-top: 30px;
 }
 
 /* Contact Info Styling */
