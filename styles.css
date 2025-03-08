@@ -187,3 +187,23 @@ a .btn {
     display: none;
 }
 
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    font-size: 24px;
+    color: #00bcd4;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0097a7;
+    transform: scale(1.2);
+}
+
