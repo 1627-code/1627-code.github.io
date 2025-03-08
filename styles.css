@@ -85,7 +85,7 @@ nav {
 }
 
 /* Admin Image */
-.img, .secrch-container {
+.img {
     position: absolute;
     top: 10px;
     right: 30px;
@@ -94,25 +94,7 @@ nav {
     border-radius: 50%;
     object-fit: cover;
 }
-.search-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-}
 
-.search-box {
-    padding: 10px;
-    width: 250px;
-    border: 2px solid #00bcd4;
-    border-radius: 5px;
-    outline: none;
-    background: #111;
-    color: white;
-}
-
-.search-box::placeholder {
-    color: #bbb;
-}
 /* What to Expect Section */
 .expect {
     padding: 40px 20px;
