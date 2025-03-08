@@ -6,12 +6,12 @@ body, html {
     overflow-x: hidden;
 }
 
-/* Navigation Bar - Updated */
+/* Navigation Bar - Now Matches Contact Page */
 nav {
     background: rgba(17, 17, 17, 0.9);
-    padding: 15px;
+    padding: 12px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5);
     position: fixed;
@@ -27,12 +27,14 @@ nav {
 }
 
 .nav-links a {
+    font-size: 16px;  /* Matches the contact page */
+    font-weight: 600;  /* Bolder text */
+    letter-spacing: 0.5px; /* Adds spacing like contact page */
+    text-transform: uppercase;  /* Matches contact page style */
     color: white;
     text-decoration: none;
     padding: 10px 15px;
-    font-weight: 500;
-    transition: color 0.3s;
-    text-align: center;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .nav-links a:hover {
@@ -45,7 +47,7 @@ nav {
     position: relative;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Ensures everything stacks properly */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -53,17 +55,25 @@ nav {
     overflow: hidden;
 }
 
-/* Hero Video - Fix for Mobile */
+/* Hero Video - Compressed Horizontally */
 .hero-video {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100vw;
+    width: 100vw; 
     height: 100vh;
     object-fit: cover;
     z-index: -1;
     filter: brightness(40%);
+}
+
+/* Fix for Mobile View */
+@media (max-width: 768px) {
+    .hero-video {
+        width: 120vw; /* Expands width to fill screen but maintains aspect ratio */
+        height: 100vh; /* Stays full height */
+    }
 }
 
 /* Hero Content */
@@ -74,10 +84,10 @@ nav {
     text-align: center;
 }
 
-/* Buttons */
+/* Centering Buttons */
 .hero-btn {
     display: flex;
-    justify-content: center; /* Centers the buttons */
+    justify-content: center;
     align-items: center;
     gap: 15px;
     margin-top: 20px;
@@ -102,46 +112,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* Admin Image */
-.img {
-    position: absolute;
-    top: 10px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* What to Expect Section */
-.expect {
-    padding: 40px 20px;
-    background: linear-gradient(to bottom, #002f4b, #000);
-    color: white;
-    text-align: center;
-    min-height: 60vh;
-}
-
-.expect-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.expect-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-    width: 280px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.expect-item:hover {
-    transform: translateY(-5px);
-}
-
 /* Footer */
 .footer {
     text-align: center;
@@ -155,61 +125,18 @@ nav {
 @media (max-width: 768px) {
     .hero {
         height: 75vh;
-        padding: 20px; /* Adds spacing */
+        padding: 20px;
+    }
+
+    .hero-video {
+        width: 120vw;  /* Expands width but maintains height */
+        height: 100vh;  /* Keeps video full height */
     }
 
     .hero-btn {
         flex-direction: column;
         gap: 10px;
     }
-
-    .hero-video {
-        height: auto;
-        width: 100vw; /* Ensures it stays within screen width */
-        min-height: 75vh; /* Adjusts height for better view */
-    }
-
-    .expect-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .expect-item {
-        width: 90%;
-    }
-
-    .img {
-        width: 40px;
-        height: 40px;
-    }
 }
 
-/* Login & Logout Buttons */
-#loginBtn, #logoutBtn {
-    padding: 8px 15px;
-    background: #00bcd4;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
 
-#loginBtn:hover, #logoutBtn:hover {
-    background: #0097a7;
-}
-
-a {
-    text-decoration: none;
-}
-
-a .btn {
-    display: inline-block;
-    text-decoration: none;
-}
-
-/* Hidden Class */
-.hidden {
-    display: none;
-}
