@@ -9,7 +9,7 @@ body, html {
 /* Navigation Bar */
 nav {
     background: rgba(17, 17, 17, 0.9);
-    padding: 12px 20px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,19 +20,19 @@ nav {
     z-index: 1000;
 }
 
-/* Centered Nav Links */
 .nav-links {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    width: 100%;
 }
 
-/* Normal Text Styling for Nav */
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: normal;
-    transition: color 0.3s, text-shadow 0.3s;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-align: center;
 }
 
 .nav-links a:hover {
@@ -53,25 +53,18 @@ nav {
     overflow: hidden;
 }
 
-/* Hero Video - Compressed Horizontally */
+
+/* Hero Video - Default (Desktop) */
 .hero-video {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100vw; 
+    width: 100vw;
     height: 100vh;
     object-fit: cover;
     z-index: -1;
     filter: brightness(40%);
-}
-
-/* Fix for Mobile View */
-@media (max-width: 768px) {
-    .hero-video {
-        width: 120vw; /* Expands width to fill screen but maintains aspect ratio */
-        height: 100vh; /* Stays full height */
-    }
 }
 
 /* Hero Content */
@@ -166,16 +159,13 @@ nav {
      text-align: center;
  @@ -155,61 +125,18 @@
  @media (max-width: 768px) {
-      .hero {
-        height: 75vh;
-        padding: 20px;
-    }
-
+    /* Fix for Mobile View */
+@media (max-width: 768px) {
     .hero-video {
-        width: 120vw;  /* Expands width but maintains height */
-        height: 100vh;  /* Keeps video full height */
+        width: 120vw; /* Makes the video wider */
+        height: 100vh; /* Stays full height */
+        transform: translateX(-25vw); /* Moves the video to the left */
     }
-
     .hero-btn {
         flex-direction: column;
         gap: 10px;
